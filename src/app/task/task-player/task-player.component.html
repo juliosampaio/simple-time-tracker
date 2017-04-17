@@ -6,18 +6,21 @@
       </md-input-container>
     </div>
     <div class="timer">
-      <h5>{{getTimer()}}</h5>
+      <h5>{{timer | async}}</h5>
     </div>
     <div class="buttons">
-      <button md-icon-button color="primary" >
+      <button md-icon-button class="btn-play" *ngIf="!task.isActive" (click)="play()">
         <md-icon class="md-24">play_arrow</md-icon>
       </button>
-      <button md-icon-button color="primary" >
+      <button md-icon-button class="btn-pause" *ngIf="task.isActive" (click)="pause()">
+        <md-icon class="md-24">pause</md-icon>
+      </button>
+      <button md-icon-button class="btn-stop" [disabled]="!task.isActive" (click)="stop()">
         <md-icon class="md-24">stop</md-icon>
       </button>
     </div>
   </div>
   <div class="task-details">
-
+    
   </div>
 </div>
