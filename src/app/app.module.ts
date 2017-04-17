@@ -4,6 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import 'hammerjs';
+
+import { AppLayoutModule } from './layout/layout.module';
+import { TaskModule } from './task/task.module';
 
 import { AppComponent } from './app.component';
 
@@ -16,7 +20,9 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule
+    MaterialModule,
+    AppLayoutModule,
+    TaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]

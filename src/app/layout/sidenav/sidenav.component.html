@@ -1,0 +1,23 @@
+<md-sidenav-container>
+  <md-sidenav #rightSidenav mode="side" opened="true">
+    <div class="app-user-banner">
+      <md-card>
+        <md-card-header>
+          <md-card-title>Julio Sampaio</md-card-title>
+          <img md-card-avatar src="https://s.gravatar.com/avatar/1cabf633deeba1e00a6dfae4c1ddc1db?s=100">
+        </md-card-header>
+      </md-card>
+    </div>
+    <div class="app-navigation-items">
+      <a md-button routerLink="item.path" *ngFor="let item of navigationItems;">
+        <i class="material-icons">{{item.icon}}</i> {{item.title}}
+      </a>
+    </div>
+  </md-sidenav>
+  <md-sidenav class="left-nav" mode="side" align="end" opened="true" >
+    <ng-content></ng-content>
+  </md-sidenav>
+  <section class="app-sidenav-content">
+
+  </section>
+</md-sidenav-container>

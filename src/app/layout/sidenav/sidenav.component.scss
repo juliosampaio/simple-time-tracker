@@ -1,0 +1,31 @@
+md-sidenav {
+  width: 220px;
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+
+  &.left-nav {
+    background: #ebebed;
+    padding: 15px;
+  }
+
+  md-card {
+    height: 132px;
+    color: #fff;
+    background: url(/assets/images/profile-bg.png) no-repeat;
+
+    md-card-title {
+      font-weight: bold;
+    }
+  }
+}
+.app-navigation-items {
+  & a:first-child {
+    padding-top: 15px;
+  }
+
+  a {
+    min-width: 100%;
+    text-decoration: none;
+    text-align: left;
+    padding-left: 33px;
+  }
+}

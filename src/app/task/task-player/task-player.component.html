@@ -1,0 +1,23 @@
+<div class="app-task-player">
+  <div class="controls">
+    <div class="task-title">
+      <md-input-container class="example-full-width">
+        <input mdInput placeholder="Current task" [(ngModel)]="task.title" [title]="task.title">
+      </md-input-container>
+    </div>
+    <div class="timer">
+      <h5>{{getTimer()}}</h5>
+    </div>
+    <div class="buttons">
+      <button md-icon-button color="primary" >
+        <md-icon class="md-24">play_arrow</md-icon>
+      </button>
+      <button md-icon-button color="primary" >
+        <md-icon class="md-24">stop</md-icon>
+      </button>
+    </div>
+  </div>
+  <div class="task-details">
+
+  </div>
+</div>
