@@ -6,6 +6,7 @@ import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TaskPlayerComponent } from './task-player/task-player.component';
+import { TagsComponent } from '../tag/tags.component';
 
 @NgModule({
   imports: [
@@ -15,10 +16,12 @@ import { TaskPlayerComponent } from './task-player/task-player.component';
     MaterialModule
   ],
   declarations: [
-    TaskPlayerComponent
+    TaskPlayerComponent,
+    TagsComponent
   ],
   exports: [
-    TaskPlayerComponent
+    TaskPlayerComponent,
+    TagsComponent
   ]
 })
 export class TaskModule {

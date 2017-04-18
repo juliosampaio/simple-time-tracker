@@ -9,6 +9,7 @@ import 'hammerjs';
 import { AppLayoutModule } from './layout/layout.module';
 import { TaskModule } from './task/task.module';
 
+import { routing } from './router.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AppComponent } from './app.component';
     HttpModule,
     MaterialModule,
     AppLayoutModule,
-    TaskModule
+    TaskModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
