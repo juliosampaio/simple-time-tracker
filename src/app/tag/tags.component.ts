@@ -6,6 +6,7 @@ import { Tag } from './tag.model';
 @Component({
   selector    : 'app-tags',
   templateUrl : 'tags.component.html',
+  styleUrls   : ['tags.component.scss'],
   providers   : [{provide: 'TagService', useClass: LocalStorageTagService}]
 })
 export class TagsComponent {

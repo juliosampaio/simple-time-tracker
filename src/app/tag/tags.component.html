@@ -1,4 +1,16 @@
-<h1>tags</h1>
-<b *ngFor="let tag of tags">
-  {{tag.name}}
-</b>
+<div class="app-tags-container">
+  <md-card>
+    <form action="">
+      <md-input-container>
+        <input mdInput placeholder="Filter tag list" value="App" type="search">
+      </md-input-container>
+    </form>
+  </md-card>
+  <md-card>
+    <md-chip-list>
+      <md-chip *ngFor="let tag of tags" >
+        {{tag.name}}
+      </md-chip>
+    </md-chip-list>
+  </md-card>
+</div>

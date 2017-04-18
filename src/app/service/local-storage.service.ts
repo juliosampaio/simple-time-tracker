@@ -27,9 +27,10 @@ export abstract class LocalStorageService<T> implements GenericService<T> {
     if (!localStorage.getItem(this.key)) {
       localStorage.setItem(this.key, JSON.stringify([]));
     }
-    let items = <T[]> JSON.parse(localStorage.getItem(this.key));
-    items.push(item);
-    localStorage.setItem(this.key, JSON.stringify(items));
+    let items      = <T[]> JSON.parse(localStorage.getItem(this.key));
+    let otherItems = items.filter((i) => (<any>i).id !== (<any> item).id);
+    otherItems.push(item);
+    localStorage.setItem(this.key, JSON.stringify(otherItems));
     return Observable.of(item);
   }
 
