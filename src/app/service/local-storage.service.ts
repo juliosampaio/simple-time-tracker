@@ -11,8 +11,10 @@ export abstract class LocalStorageService<T> implements GenericService<T> {
     return this.getItem(id);
   }
 
-  list(id: number) : Observable<T> {
-    return null;
+  list(params?: any) : Observable<T[]> {
+    let stringItem = localStorage.getItem(this.key);
+    let items      = <T[]> JSON.parse(stringItem);
+    return Observable.of(items);
   }
 
   save(record: T) : Observable<T> {

@@ -12,15 +12,26 @@ import { Tag } from './tag.model';
 export class TagsComponent {
 
   tags: Tag[] = [];
+  newTagName: string;
 
   constructor(@Inject('TagService') private service: TagService) {
-    service.save({
-      id: 1,
-      name: 'app'
-    }).subscribe();
-    service
-      .get(1)
-      .subscribe((t) => this.tags.push(t));
+    this.refreshTagList();
+  }
+
+  refreshTagList() {
+    this.service
+      .list()
+      .subscribe((tags) => this.tags = tags);
+  }
+
+  add() {
+    this.service.save({
+      id  : new Date().getTime(),
+      name: this.newTagName
+    }).subscribe(() => {
+      this.newTagName = "";
+      this.refreshTagList();
+    });
   }
 
 }
