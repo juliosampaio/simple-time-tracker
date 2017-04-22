@@ -24,14 +24,17 @@ export class TagsComponent {
       .subscribe((tags) => this.tags = tags);
   }
 
-  add() {
+  add(newTag: Tag) {
     this.service.save({
       id  : new Date().getTime(),
-      name: this.newTagName
+      name: newTag.name
     }).subscribe(() => {
-      this.newTagName = "";
       this.refreshTagList();
     });
+  }
+
+  delete(tag: Tag) {
+    this.service.delete(tag.id).subscribe(() => this.refreshTagList());
   }
 
 }

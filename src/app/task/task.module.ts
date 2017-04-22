@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { TagInputModule } from 'ng2-tag-input';
+
 import { TaskPlayerComponent } from './task-player/task-player.component';
 import { TagsComponent } from '../tag/tags.component';
 
@@ -13,7 +15,8 @@ import { TagsComponent } from '../tag/tags.component';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    TagInputModule
   ],
   declarations: [
     TaskPlayerComponent,

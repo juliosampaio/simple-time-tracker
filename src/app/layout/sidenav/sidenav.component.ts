@@ -20,10 +20,10 @@ export class SidenavComponent {
 
   constructor() {
     this.navigationItems = [
-      {icon: 'assignment_turned_in', title: 'Tasks', path: 'face'},
-      {icon: 'assignment', title: 'Projects', path: 'face'},
-      {icon: 'show_chart', title: 'Reports', path: 'face'},
-      {icon: 'label', title: 'Tags', path: 'face'}
+      {icon: 'assignment_turned_in', title: 'Tasks', path: ''},
+      {icon: 'assignment', title: 'Projects', path: ''},
+      {icon: 'show_chart', title: 'Reports', path: ''},
+      {icon: 'label', title: 'Tags', path: ''}
     ]
   }
 

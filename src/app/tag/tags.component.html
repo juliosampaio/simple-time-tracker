@@ -1,18 +1,10 @@
 <div class="app-tags-container">
   <md-card>
-    <md-input-container class="tag-input-field">
-      <input [(ngModel)]="newTagName" mdInput placeholder="Add new" type="search">
-    </md-input-container>
-    <button md-button (click)="add()" >Add</button>
-  </md-card>
-  <md-card>
-    <md-input-container class="tag-input-field">
-      <input mdInput placeholder="Filter tags" type="search">
-    </md-input-container>
-    <md-chip-list>
-      <md-chip *ngFor="let tag of tags" >
-        {{tag.name}}
-      </md-chip>
-    </md-chip-list>
+    <tag-input [(ngModel)]='tags'
+               [identifyBy]="'id'"
+               [displayBy]="'name'"
+               (onAdd)="add($event)"
+               (onRemove)="delete($event)">
+    </tag-input>
   </md-card>
 </div>
