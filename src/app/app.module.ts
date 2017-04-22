@@ -21,7 +21,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule,
+    MaterialModule.forRoot(),
     AppLayoutModule,
     TaskModule,
     routing
