@@ -9,7 +9,7 @@
       </md-card>
     </div>
     <div class="app-navigation-items">
-      <a md-button routerLink="item.path" *ngFor="let item of navigationItems;">
+      <a md-button routerLink="{{item.path}}" *ngFor="let item of navigationItems;">
         <i class="material-icons">{{item.icon}}</i> {{item.title}}
       </a>
     </div>

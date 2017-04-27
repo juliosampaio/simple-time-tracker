@@ -23,7 +23,7 @@ export class SidenavComponent {
       {icon: 'assignment_turned_in', title: 'Tasks', path: ''},
       {icon: 'assignment', title: 'Projects', path: ''},
       {icon: 'show_chart', title: 'Reports', path: ''},
-      {icon: 'label', title: 'Tags', path: ''}
+      {icon: 'label', title: 'Tags', path: 'tags'}
     ]
   }
 

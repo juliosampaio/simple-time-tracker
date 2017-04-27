@@ -8,6 +8,7 @@ import 'hammerjs';
 
 import { AppLayoutModule } from './layout/layout.module';
 import { TaskModule } from './task/task.module';
+import { AuthModule } from './auth/auth.module';
 
 import { routing } from './router.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ import { AppComponent } from './app.component';
     HttpModule,
     MaterialModule.forRoot(),
     AppLayoutModule,
+    AuthModule,
     TaskModule,
     routing
   ],

@@ -1,4 +1,9 @@
-<app-toolbar (hamburgerButtonClicked)="appSidenav.toggle()"></app-toolbar>
-<app-sidenav #appSidenav>
-  <app-task-player></app-task-player>
-</app-sidenav>
+<div *ngIf="!user; else displayApp">
+  <router-outlet></router-outlet>
+</div>
+<ng-template #displayApp>
+  <app-toolbar (hamburgerButtonClicked)="appSidenav.toggle()"></app-toolbar>
+  <app-sidenav #appSidenav>
+    <app-task-player></app-task-player>
+  </app-sidenav>
+</ng-template>
