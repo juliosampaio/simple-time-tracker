@@ -1,15 +1,90 @@
 #app-login-form {
 
+  md-card-title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 60px;
+    background-color: #9FA09E;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+
+    .app-logo {
+      margin-top: 7px;
+      i {
+        font-size: 50px;
+      }
+    }
+  }
+
+  md-card-content {
+    margin-top: 60px;
+  }
+
+  .separator {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: center;
+    clear: both;
+    overflow: hidden;
+    font-size: 13px;
+
+    &::before, &::after {
+      content: '';
+      position: relative;
+      width: 50%;
+      background-color: rgba(0,0,0,0.2);
+      display: inline-block;
+      height: 1px;
+      vertical-align: middle;
+    }
+
+    &::before {
+      right: 0.5em;
+      margin-left: -50%;
+    }
+
+    &::after {
+      left: 0.5em;
+      margin-right: -50%;
+    }
+
+  }
+
   md-card {
     width: 380px;
     margin: 4em auto;
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    -webkit-box-flex: 1;
+    max-width: 90%;
+  }
+
+  md-card-actions {
+    button:last-of-type {
+      float: right;
+    }
   }
 
   form md-input-container {
     width: 100%;
   }
 
+  .app-login-actions {
+    a {
+      color: #2196f3;
+      text-decoration: none;
+      float: right;
+      line-height: 23px;
+    }
+  }
+
   .btn-alternative-login {
     width: 100%;
+    img {
+      width: 20px;
+    }
   }
 }
