@@ -1,35 +1,35 @@
 <section id="app-login-form">
-  <md-card color="primary">
+  <form #loginForm="ngForm" (ngSubmit)="authenticate()" >
+    <md-card>
 
-    <md-card-title>
-      <div class="app-logo">
-        <i class="material-icons">assignment_turned_in</i>
-      </div>
-    </md-card-title>
+      <md-card-title>
+        <div class="app-logo">
+          <i class="material-icons">assignment_turned_in</i>
+        </div>
+      </md-card-title>
 
-    <md-card-content>
-      <form name="loginForm">
-        <button md-raised-button class="btn-alternative-login" >
+      <md-card-content>
+        <button md-raised-button type="button" class="btn-alternative-login" >
           Login with Github
           <img src="/assets/images/GitHub-Mark-32px.png">
         </button>
         <div class="separator"><span>or</span></div>
         <md-input-container>
-          <input mdInput placeholder="Login" >
+          <input mdInput [(ngModel)]="user.login" name="login" placeholder="Login" type="email" required>
         </md-input-container>
         <md-input-container>
-          <input mdInput type="password" placeholder="Password" >
+          <input mdInput [(ngModel)]="user.password" name="password" type="password" placeholder="Password" required>
         </md-input-container>
         <div class="app-login-actions">
-          <md-checkbox>Remember-me</md-checkbox>
+          <md-checkbox [(ngModel)]="user.rememberMe" name="rememberMe" >Remember-me</md-checkbox>
           <a href="">Forgot password?</a>
         </div>
-      </form>
-    </md-card-content>
+      </md-card-content>
 
-    <md-card-actions>
-      <button md-raised-button >Login</button>
-      <button md-raised-button >Create new account</button>
-    </md-card-actions>
-  </md-card>
+      <md-card-actions>
+        <button md-raised-button [disabled]="!loginForm.form.valid" type="submit" >Login</button>
+        <button md-raised-button >Create new account</button>
+      </md-card-actions>
+    </md-card>
+  </form>
 </section>
