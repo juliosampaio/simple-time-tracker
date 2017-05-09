@@ -1,28 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, Inject, ChangeDetectorRef, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 
-import { FirebaseAuthService } from '../app/auth/firebase-auth.service';
+import { AuthService } from '../app/auth/auth.service';
 import { User } from '../app/auth/user.model';
 
 @Component({
-  selector: 'app-root',
+  selector   : 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls  : ['./app.component.css']
 })
-export class AppComponent {
-  title = 'app works!';
+export class AppComponent implements OnInit {
   user: boolean = false;
 
-  constructor(private authService: FirebaseAuthService) {
+  constructor(
+    @Inject('AuthService') private authService: AuthService,
+    private cdRef:ChangeDetectorRef
+  ) {
     authService.getCurrentUser().subscribe(u => {
-      console.log("current user...");
+      console.log('detecting user...');
       this.user = u !== null;
+      this.cdRef.detectChanges();
     });
+  }
 
-    setTimeout(() => {
-      console.log("saindo...");
-      this.authService.logout();
-    }, 3000);
+  ngOnInit() {
+    console.log('init...');
+    this.cdRef.detectChanges();
   }
 }

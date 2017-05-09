@@ -12,6 +12,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { LoginComponent } from './login/login.component';
 import { TagsComponent } from '../tag/tags.component';
 import { FirebaseAuthService } from './firebase-auth.service';
+import { AuthGuard } from './auth.guard';
 
 export const firebaseConfig = {
   apiKey            : 'AIzaSyBpVuIrnaCGOt7JtGZpZ0byJNW2Rhz-2hM',
@@ -37,7 +38,11 @@ export const firebaseConfig = {
   exports: [
     LoginComponent
   ],
-  providers: [AngularFireAuth, FirebaseAuthService]
+  providers: [
+    AngularFireAuth,
+    AuthGuard,
+    { provide: 'AuthService', useClass: FirebaseAuthService }
+  ]
 })
 export class AuthModule {
 

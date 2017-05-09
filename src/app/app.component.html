@@ -1,10 +1,10 @@
 {{user}}
-<div *ngIf="!user; else displayApp">
-  <router-outlet></router-outlet>
+<div *ngIf="!user">
+  <router-outlet name="login"></router-outlet>
 </div>
-<ng-template #displayApp>
+<div *ngIf="user">
   <app-toolbar (hamburgerButtonClicked)="appSidenav.toggle()"></app-toolbar>
   <app-sidenav #appSidenav>
     <app-task-player></app-task-player>
   </app-sidenav>
-</ng-template>
+</div>
