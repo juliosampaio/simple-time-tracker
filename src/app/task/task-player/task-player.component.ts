@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Observable }     from 'rxjs/Observable';
 import 'rxjs/add/observable/interval';
-import { Task } from '../task.model';
+import { Task } from '../../shared';
 
 @Component({
   selector    : 'app-task-player',

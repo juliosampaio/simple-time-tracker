@@ -1,18 +1,23 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-
-import { MaterialModule } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 
+import { SharedModule } from '../shared';
+
 import { LoginComponent } from './login/login.component';
-import { TagsComponent } from '../tag/tags.component';
 import { FirebaseAuthService } from './firebase-auth.service';
 import { AuthGuard } from './auth.guard';
+
+const authRouting: ModuleWithProviders = RouterModule.forChild([
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+]);
+
 
 export const firebaseConfig = {
   apiKey            : 'AIzaSyBpVuIrnaCGOt7JtGZpZ0byJNW2Rhz-2hM',
@@ -27,10 +32,9 @@ export const firebaseConfig = {
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MaterialModule,
     AngularFireModule.initializeApp(firebaseConfig, 'simple-time-tracker'),
+    authRouting,
+    SharedModule,
   ],
   declarations: [
     LoginComponent

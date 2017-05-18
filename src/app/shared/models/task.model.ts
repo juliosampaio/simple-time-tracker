@@ -20,7 +20,7 @@ export class Task {
     if (!this.isActive) {
       this.isActive = true;
       this.sessions.push({ start: this.now() })
-    }    
+    }
   }
 
   stop() {

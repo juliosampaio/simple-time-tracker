@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 
-import { User } from './user.model';
+import { User } from '../shared';
 
 export interface AuthService {
   getCurrentUser(): Observable<User>;

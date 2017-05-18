@@ -1,7 +1,8 @@
 import { Component, Inject } from '@angular/core';
+import { Router } from '@angular/router'
 
 import { AuthService } from '../auth.service';
-import { User } from '../user.model';
+import { User } from '../../shared';
 
 @Component({
   selector    : 'app-login',
@@ -12,7 +13,10 @@ export class LoginComponent {
 
   user: User;
 
-  constructor(@Inject('AuthService') private authService: AuthService) {
+  constructor(
+    @Inject('AuthService') private authService: AuthService,
+    private router: Router,
+  ) {
     this.user = new User(null, null, null);
   }
 
@@ -20,9 +24,10 @@ export class LoginComponent {
     this
       .authService
       .authenticate(this.user)
-      .subscribe((user) => {
-        console.log(user);
-      });
+      .subscribe(
+        user => { this.router.navigateByUrl('/') },
+        err  => { console.log(err) }
+      );
   }
 
 }

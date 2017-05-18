@@ -1,17 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 
-import { AppLayoutModule } from './layout/layout.module';
+import { SharedModule } from './shared';
+import { HomeModule } from './home/home.module';
 import { TaskModule } from './task/task.module';
 import { AuthModule } from './auth/auth.module';
 
-import { routing } from './router.module';
 import { AppComponent } from './app.component';
+
+const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
 @NgModule({
   declarations: [
@@ -23,10 +26,11 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
-    AppLayoutModule,
     AuthModule,
     TaskModule,
-    routing
+    rootRouting,
+    SharedModule,
+    HomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

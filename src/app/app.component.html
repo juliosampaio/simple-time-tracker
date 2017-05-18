@@ -1,10 +1,1 @@
-{{user}}
-<div *ngIf="!user">
-  <router-outlet name="login"></router-outlet>
-</div>
-<div *ngIf="user">
-  <app-toolbar (hamburgerButtonClicked)="appSidenav.toggle()"></app-toolbar>
-  <app-sidenav #appSidenav>
-    <app-task-player></app-task-player>
-  </app-sidenav>
-</div>
+<router-outlet></router-outlet>
